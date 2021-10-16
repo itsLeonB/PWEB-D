@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Add Element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Genshin Impact Random Team Maker</h1>
+        <h2>
+            <ol>
+
+            </ol>
+        </h2>
+        <button id="btn_char">Add a character</button>
+        <script>
+            $(document).ready(function () {
+                const chars = ["Aloy", "Albedo", "Amber", "Ayaka"];
+                var i;
+                $("#btn_char").click(function () {
+                    i = Math.floor(Math.random() * 5);
+                    $("ol").append("<li>" + chars[i] + "</li>");
+                });
+            });
+        </script>
+    </div>
+    <div>
+        <h1>Build a Road</h1>
+        <div id="road"></div>
+        <button id="btn_road">Build road segment</button>
+        <script>
+            $(document).ready(function () {
+                $("#btn_road").click(function () {
+                    $("#road").prepend("<img src='https://upload.wikimedia.org/wikipedia/commons/7/71/Black.png' width='100px' height='10px'>");
+                });
+            });
+        </script>
+    </div>
+    <div>
+        <h1>Iron Man Lineup</h1>
+        <img id="iron_man" src="https://static.wikia.nocookie.net/marvelcinematicuniverse/images/f/f2/Iron_Man_Armor_-_Mark_LXXXV.png">
+        <button id="btn_left">Add to left</button>
+        <button id="btn_right">Add to right</button>
+        <script>
+            $(document).ready(function () {
+                $("#btn_left").click(function () {
+                    $("#iron_man").before("<img id='iron_man' src='https://static.wikia.nocookie.net/marvelcinematicuniverse/images/f/f2/Iron_Man_Armor_-_Mark_LXXXV.png' height='350px'>");
+                });
+                $("#btn_right").click(function () {
+                    $("#iron_man").after("<img id='iron_man' src='https://static.wikia.nocookie.net/marvelcinematicuniverse/images/f/f2/Iron_Man_Armor_-_Mark_LXXXV.png' height='350px'>");
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
